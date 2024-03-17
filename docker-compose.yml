@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  bun:
+    image: oven/bun:alpine
+    container_name: bun
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "bun run dev"
